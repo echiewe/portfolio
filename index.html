@@ -3,23 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png">
     <title>Evelyn</title>
+    <script>
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcome = "Welcome to my portfolio!";
+            const text = document.getElementById('wave-text');
+            const shadow = document.getElementById('wave-shadow');
+
+            text.innerHTML = welcome
+            .split('')
+            .map((char, i) => `<span style="--i:${i}">${char}</span>`)
+            .join("");
+
+            shadow.innerHTML = welcome
+            .split('')
+            .map((char, i) => `<span style="--i:${i}">${char}</span>`)
+            .join("");
+        });
+    </script>
 </head>
 <body>
+    <!-- HERO -->
     <section id="hero">
+        <div class="background">
 
+            <div id="links">
+                <a href="docs/EvelynChiewResume.pdf" target="_blank">
+                    <button class="link" title="Resume"><img class='icon' src='images/svgs/resume-dark.svg'></button>
+                </a>
+                <a href="https://github.com/echiewe" target="_blank">
+                    <button class="link" title="GitHub"><img class='icon' src='images/svgs/github-dark.svg'></button>
+                </a>
+                <a href="https://www.linkedin.com/in/evelyn-chiew-072bb2279/" target="_blank">
+                    <button class="link" title="LinkedIn"><img class='icon' id="linkedin" src='images/svgs/linkedin-dark.svg'></button>
+                </a>
+                <a href="" target="_blank">
+                    <button class="link" title="Email"><img class='icon' src='images/svgs/email-dark.svg'></button>
+                </a>
+            </div>
+
+            <div>
+                <p class="wave" id="wave-text"></p>
+                <p class="wave" id="wave-shadow"></p>
+            </div>
+
+        </div>
     </section>
+
+    <!-- INTRO -->
     <section id="intro">
-
+        <div>
+            <h1>Hey! It's Evelyn :)</h1>
+            <img id="me-img" src="images/silly.jpg">
+        </div>
+        <div id="intro-para">
+            <p>
+                I have a particular interest in web development and architecture! My favourite projects can be found below. 
+            </p>
+            <p>
+                I'm also super interested in AI and machine learning. I got the opportunity to do research work in 
+                the field of AI, specifically regarding articulating decision-making policies of AI agents in an 
+                artificial environment. I especially covet my experience from this research position since the 
+                way I think and face problems changed drastically, and my understanding of AI got much better. 
+            </p>
+            <p>In my free time, I like to read, travel, hang out with my sisters and my bird, and work out. </p>
+            <div id="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 10000 }'>
+                <div class="carousel-cell"><img id="bird-img" src="images/carousel/bird.jpg"></div>
+                <div class="carousel-cell"><img id="alaska-img" src="images/carousel/cruise.jpg"></div>
+                <div class="carousel-cell"><img id="aqua-img" src="images/carousel/aquarium.jpg"></div>
+            </div>
+        </div>
     </section>
+    
+    <!-- PROJECTS -->
     <section id="projects">
+        <h1>My work!</h1>
+        <div id="proj-parent">
 
+            <div class="proj-container">
+                <h2>Nestuity</h2>
+                <img src="images/oh.jpg">
+                <p>description</p>
+                <p>link</p>
+            </div>
+
+            <div class="proj-container">
+                <h2>Workout4U</h2>
+                <img src="images/oh.jpg">
+                <p>description</p>
+                <p>link</p>
+            </div>
+
+            <div class="proj-container">
+                <h2>Social Distribution Network</h2>
+                <img src="images/oh.jpg">
+                <p>description</p>
+                <p>link</p>
+            </div>
+
+            <div class="proj-container">
+                <h2>Grocery Store Profitability</h2>
+                <img src="images/oh.jpg">
+                <p>description</p>
+                <p>link</p>
+            </div>
+
+        </div>
     </section>
 
 
-    <section id="work experience">
+    <!-- <section id="work experience">
     </section>
     <section id="skills">
-    </section>
+    </section> -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
+<footer>
+    <p>© 2025 Evelyn Chiew — Designed & built with HTML, CSS, and JS</p>
+    <p>Thanks for visiting! See you around :)</p>
+</footer>
 </html>
