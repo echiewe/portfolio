@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300..700&display=swap");
 
 /* --------------------- DEFAULTS --------------------- */
 :root {
     --primary: #d5f1dd;
     --secondary: #f7fbe6;
+    /* --secondary: #eefaf2; */
     --accent: #51600f;
 }
 
 /* --------------------- GENERAL --------------------- */
 html {
     font-family: "Quicksand", sans-serif;
+    /* font-family: "Comic Neue", cursive; */
 }
 
 body {
@@ -48,6 +51,13 @@ footer {
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+    p {font-size: 14px;}
+    h1 {font-size: 28px;}
+    h2 {font-size: 20px;}
+    section {padding: 30px 20px;}
 }
 
 /* --------------------- HERO --------------------- */
@@ -147,34 +157,89 @@ footer {
 
 @keyframes realWave {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
+  50%      { transform: translateY(-0.6vw); }
+}
+
+@media only screen and (max-width: 650px) {
+    .background {
+        width: 90vw;
+        aspect-ratio: 1/1;
+    }
+    #links {
+        justify-content: center;
+        margin-right: 0px;
+    }
+    #wave-text {
+        margin-top: 40vw;
+        margin-left: 5vw;
+    }
+    .wave span {
+        font-size: 4vw;
+    }
 }
 
 /* --------------------- INTRO --------------------- */
 #intro {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-}
-
-#intro div {
-    width: 30vw;
-}
-
-#intro h1 {
-    margin-left: 15px;
+    gap: 5vw;
+    padding-right: 15vw;
+    padding-left: 15vw;
+    padding-top: 80px;
+    height: fit-content;
 }
 
 #intro-para {
-    margin-top: 40px;
+    height: 38vw;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
 }
+
+#intro h1 {
+    margin-top: 0px;
+}
+
+#intro-para h2 {
+    margin-bottom: 0px;
+}
+
+#intro-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    width: fit-content;
+    padding-right: 10px;
+    border-bottom: 2px solid var(--primary);
+    font-weight: 600;
+}
+
+#intro-menu p {
+    margin-bottom: 0px;
+    padding-bottom: 3px;
+}
+
+.menu-item:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+#about-me-nav {
+    border-bottom: 2px solid var(--accent);
+}
+
+#about-me {display: block;}
+#work-exp {display: none;}
+#skills {display: none;}
 
 #me-img {
-    width: 500px;
+    height: 38vw;
+    aspect-ratio: 3/4;
 }
 
-.carousel {
+/* .carousel {
     width: 100px;
 }
 
@@ -190,28 +255,85 @@ footer {
     object-fit: cover;
     width: 10vw;
     aspect-ratio: 1/1;
+} */
+
+#mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 650px) {
+    #me-img {
+        height: 100vw;
+        width: 80vw;
+    }
+    #intro {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    #intro-para {
+        width: 80vw;
+        height: fit-content;
+        aspect-ratio: 0;
+    }
+    #mobile {display: flex;}
+    #web {display: none;}
 }
 
 /* --------------------- PROJECTS --------------------- */
 #projects {
+    padding-left: 15vw;
+    padding-right: 15vw;
 }
 
 #proj-parent {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 5vh;
 }
 
 .proj-container {
     display: flex;
-    width: 400px;
+    width: 100%;
     margin-top: 30px;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 0px 50px;
     background-color: var(--secondary);
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-out;
+}
+
+.subsection {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.subsection p {
+    height: 80px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.subsection h2 {
+    margin-bottom: 0px;
+}
+
+.subsection p:hover {
+    background-color: #ecf0dd;
+    /* #f7fbe6 */
+}
+
+.subsection p::-webkit-scrollbar {
+    display: none;
+}
+
+.subsection-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .proj-container:hover {
@@ -223,8 +345,31 @@ footer {
     width: 100px;
 }
 
+@media only screen and (max-width: 650px) {
+    .proj-container {
+        flex-direction: column;
+        padding: 0px 20px;
+    }
+    .proj-container p {
+        font-size: 14px;
+    }
+    #projects img {
+        display: none;
+    }
+}
+
 /* --------------------- FOOTER --------------------- */
 footer p {
     font-size: 15px;
 }
 
+@media only screen and (max-width: 650px) {
+    #thanks {
+        display: none;
+    }
+    footer p {
+        font-size: 10px;
+    }
+}
+
+/* https://www.w3schools.com/css/css3_images.asp image animations */

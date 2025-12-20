@@ -7,24 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="files/images/favicon.png">
     <title>Evelyn</title>
-    <script>
-        'use strict';
-        document.addEventListener('DOMContentLoaded', function() {
-            const welcome = "Welcome to my portfolio!";
-            const text = document.getElementById('wave-text');
-            const shadow = document.getElementById('wave-shadow');
-
-            text.innerHTML = welcome
-            .split('')
-            .map((char, i) => `<span style="--i:${i}">${char}</span>`)
-            .join("");
-
-            shadow.innerHTML = welcome
-            .split('')
-            .map((char, i) => `<span style="--i:${i}">${char}</span>`)
-            .join("");
-        });
-    </script>
+    <script src="main.js"></script>
 </head>
 <body>
     <!-- HERO -->
@@ -56,26 +39,52 @@
 
     <!-- INTRO -->
     <section id="intro">
-        <div>
-            <h1>Hey! It's Evelyn :)</h1>
-            <img id="me-img" src="files/images/silly.jpg">
-        </div>
+        <h1 id="mobile">Hey! It's Evelyn :)</h1>
+        <img id="me-img" src="files/images/silly.jpg">
         <div id="intro-para">
-            <p>
-                I have a particular interest in web development and architecture! My favourite projects can be found below. 
-            </p>
-            <p>
-                I'm also super interested in AI and machine learning. I got the opportunity to do research work in 
-                the field of AI, specifically regarding articulating decision-making policies of AI agents in an 
-                artificial environment. I especially covet my experience from this research position since the 
-                way I think and face problems changed drastically, and my understanding of AI got much better. 
-            </p>
-            <p>In my free time, I like to read, travel, hang out with my sisters and my bird, and work out. </p>
-            <div id="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 10000 }'>
-                <div class="carousel-cell"><img id="bird-img" src="files/images/carousel/bird.jpg"></div>
-                <div class="carousel-cell"><img id="alaska-img" src="files/images/carousel/cruise.jpg"></div>
-                <div class="carousel-cell"><img id="aqua-img" src="files/images/carousel/aquarium.jpg"></div>
-                <div class="carousel-cell"><img id="aqua-img" src="files/images/carousel/alaska.jpg"></div>
+            <div>
+                <h1 id="web">Hey! It's Evelyn :)</h1>
+                <h2 id="intro-section">About Me</h2>
+                <nav id="intro-menu">
+                    <p class="menu-item" id="about-me-nav">About Me</p>
+                    <p class="menu-item" id="work-exp-nav">Work Experience</p>
+                    <p class="menu-item" id="skills-nav">Skills</p>
+                </nav>
+            </div>
+            <div id="about-me">
+                <p>
+                    I'm currently a 5th year computing science student at the UofA, specializing in software practice. 
+                </p>
+                <p>
+                    I have a particular interest in web development and architecture! My favourite projects can be found below. 
+                </p>
+                <p>
+                    I've also done some work with AI and machine learning, as well as database management and operating systems.
+                </p>
+                <p>In my free time, I like to read, travel, hang out with my sisters and my bird, and work out. </p>
+            </div>
+            <div id="work-exp">
+                <div>
+                    <p>Software Engineer | Nestuity</p>
+                    <p>Sept 2025 - Present</p>
+                </div>
+                <div>
+                    <p>Teaching Assistant | University of Alberta</p>
+                    <p>Jan 2024 - Present</p>
+                </div>
+                <div>
+                    <p>Implementation Consultant Intern | Fast Enterprises</p>
+                    <p>May 2024 - May 2025</p>
+                </div>
+                <div>
+                    <p>Research Assistant | University of Alberta (Dr. Vadim Bulitko)</p>
+                    <p>Feb 2024 - May 2024</p>
+                </div>
+            </div>
+            <div id="skills">
+                <p><b>Languages:</b><br>Python, Java, C, SQL, .NET, VB.NET, XML, JavaScript, TypeScript, HTML/CSS, MATLAB, R</p>
+                <p><b>Frameworks:</b><br>React, Next.js, Tailwind CSS, Spring boot, JUnit, Django, AgentFlow</p>
+                <p><b>Developer Tools:</b><br>Docker, Agentic AI, Git, GitHub Actions (CI/CD), VSCode, SQL Server Management Studio, Linux, Android Studio</p>
             </div>
         </div>
     </section>
@@ -86,31 +95,48 @@
         <div id="proj-parent">
 
             <div class="proj-container">
-                <h2>Nestuity</h2>
+                <div class="subsection">
+                    <h2>Nestuity</h2>
+                    <p>
+                        Nestuity supports parents of newborns by simplifying the management of daily essentials. 
+                        The app reduces the need for multiple tools, eases financial strain, and offers peace of mind 
+                        through smart pricing insights, cost tracking for essential items, a usage calculator to forecast diaper needs, 
+                        and intelligent reminders for supplies and key milestones.
+                    </p>
+                </div>
                 <img src="files/images/oh.jpg">
-                <p>description</p>
-                <p>link</p>
             </div>
 
             <div class="proj-container">
-                <h2>Workout4U</h2>
+                <div class="subsection">
+                    <h2>Workout4U</h2>
+                    <p>A cute, user-friendly workout generator that creates customized workouts based on muscle group preferences input by users.</p>
+                </div>
                 <img src="files/images/oh.jpg">
-                <p>description</p>
-                <p>link</p>
             </div>
 
             <div class="proj-container">
-                <h2>Social Distribution Network</h2>
+                <div class="subsection">
+                    <h2>Social Distribution Network</h2>
+                    <p>
+                        A social media web application where users can post, like, comment, and follow other users. 
+                        Also includes the integration of other social network applications to enable app-to-app communication.
+                    </p>
+                </div>
                 <img src="files/images/oh.jpg">
-                <p>description</p>
-                <p>link</p>
             </div>
 
             <div class="proj-container">
-                <h2>Grocery Store Profitability</h2>
+                <div class="subsection">
+                    <h2>Grocery Store Profitability</h2>
+                    <p>
+                        A machine-learning project that improved the profitability of a grocery store by 
+                        predicting which customer groups and promotions generated the most value. By analyzing 
+                        real-world purchasing data and presenting clear, visual insights, the work supported 
+                        smarter pricing and promotional decisions.
+                    </p>
+                </div>
                 <img src="files/images/oh.jpg">
-                <p>description</p>
-                <p>link</p>
             </div>
 
         </div>
@@ -125,6 +151,6 @@
 </body>
 <footer>
     <p>© 2025 Evelyn Chiew — Designed & built with HTML, CSS, and JS</p>
-    <p>Thanks for visiting! See you around :)</p>
+    <p id="thanks">Thanks for visiting! See you around :)</p>
 </footer>
 </html>
