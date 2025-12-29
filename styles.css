@@ -211,14 +211,16 @@ footer {
     justify-content: space-between;
     gap: 2vw;
     width: fit-content;
-    padding-right: 10px;
     border-bottom: 2px solid var(--primary);
     font-weight: 600;
 }
 
 #intro-menu p {
     margin-bottom: 0px;
-    padding-bottom: 3px;
+}
+
+.menu-item {
+    padding: 5px 10px;
 }
 
 .menu-item:hover {
@@ -238,24 +240,6 @@ footer {
     height: 38vw;
     aspect-ratio: 3/4;
 }
-
-/* .carousel {
-    width: 100px;
-}
-
-.carousel-cell {
-    width: 70%;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-cell img {
-    display: block;
-    object-fit: cover;
-    width: 10vw;
-    aspect-ratio: 1/1;
-} */
 
 #mobile {
     display: none;
@@ -303,6 +287,7 @@ footer {
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-out;
+    text-decoration: none;
 }
 
 .subsection {
