@@ -2,150 +2,497 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@400;600&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="files/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/files/icons/favicon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A7C59',
+                        secondary: '#6B6358',
+                        tertiary: '#C4A66A',
+                        lightneutral: '#f8f6f2',
+                        neutral: '#FAF6F0',
+                        darkneutral: '#f5f1ea',
+                        darkerneutral: '#eae6de',
+                    },
+                    fontFamily: {
+                        sans: ['"Nunito Sans"', 'sans-serif'], 
+                        literata: ['"Abril Fatface"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evelyn</title>
-    <script src="main.js"></script>
 </head>
-<body>
-    <!-- HERO -->
-    <section id="hero">
-        <div class="background">
+<body class="bg-neutral">
 
-            <div id="links">
-                <a href="files/EvelynChiewResume.pdf" target="_blank">
-                    <button class="link" title="Resume"><img class='icon' src='files/images/svgs/resume-dark.svg'></button>
-                </a>
-                <a href="https://github.com/echiewe" target="_blank">
-                    <button class="link" title="GitHub"><img class='icon' src='files/images/svgs/github-dark.svg'></button>
-                </a>
-                <a href="https://www.linkedin.com/in/evelyn-chiew-072bb2279/" target="_blank">
-                    <button class="link" title="LinkedIn"><img class='icon' id="linkedin" src='files/images/svgs/linkedin-dark.svg'></button>
-                </a>
-                <a href="mailto:e.chiew@outlook.com">
-                    <button class="link" title="Email"><img class='icon' src='files/images/svgs/email-dark.svg'></button>
-                </a>
+    <header class="flex justify-between items-center bg-lightneutral/80 shadow-lg fixed backdrop-blur z-50 top-0 sticky py-4 px-7">
+        <p class="text-xl text-primary font-literata">Evelyn</p>
+        <nav class="hidden md:flex gap-4 items-center">
+            <a href="#about" class="hover:text-primary">About</a>
+            <a href="#stack" class="hover:text-primary">Stack</a>
+            <a href="#projects" class="hover:text-primary">Projects</a>
+            <a href="#experience" class="hover:text-primary">Experience</a>
+            <a href="#contact" class="hover:text-primary">Contact</a>
+            <a href="files/EvelynChiewResume.pdf" target="_blank" class="btn-primary">Resume</a>
+        </nav>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="md:h-[90vh] pt-10 md:pt-0 md:mx-20 bg-neutral">
+        <div class="flex flex-col md:flex-row h-full w-full justify-center items-center">
+            <div class="flex flex-col h-full w-full md:w-1/2 justify-center items-center gap-8 text-center md:text-left">
+                <h2 class="text-4xl w-[80%] md:text-5xl md:w-2/3 font-literata">
+                    Full-Stack Solutions Driven By 
+                    <span class="text-primary">Creativity</span>, 
+                    <span class="text-secondary">Empathy</span>, and 
+                    <span class="text-tertiary">System Design</span>
+                </h2>
+                <div class="w-[80%] md:w-2/3">
+                    <p>
+                        Computer science student with
+                        2 years of industry experience, specializing in 
+                        <span class="text-secondary font-literata">full-stack application development</span> and 
+                        <span class="text-secondary font-literata">LLM integration</span>,
+                        graduating 2026.
+                    </p>
+                    <p class="mt-3">
+                        My work is guided by a blend of <span class="text-secondary font-literata">creativity, empathy, and system-level thinking</span>, 
+                        allowing me to build full-stack solutions that are both <span class="text-secondary font-literata">elegant and dependable</span>. 
+                        I care deeply about <span class="text-secondary font-literata">how software affects people</span> and strive to reflect that in every system I design.
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row md:flex-wrap md:w-2/3 justify-start gap-3">
+                    <a class="btn-primary font-semibold" href="#projects">View Portfolio 🡓</a>
+                    <a class="btn-secondary font-semibold" href="#contact">Get in Touch</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center items-center">
+                <div class="bg-secondary w-2/3 h-[200px] md:w-[350px] md:h-[465px] rounded-2xl p-3 my-10 md:my-0">
+                    <div class="bg-[url('/files/images/me.jpg')] bg-cover rounded-lg h-full w-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech stack -->
+    <section id="stack" class="md:h-[80vh] py-5 md:mx-20 bg-darkneutral flex flex-col justify-center items-center gap-10 md:gap-20 rounded-2xl">
+        <div class="w-full flex flex-col items-center gap-5">
+            <h3 class="text-4xl md:text-5xl mt-10 md:mt-0 font-literata">Technical Stack</h3>
+            <div class="h-1.5 w-[10%] bg-primary rounded-lg"></div>
+        </div>
+        <div class="flex flex-col md:flex-row w-full justify-center items-center md:items-start gap-8 md:gap-20 mb-10">
+            <div class="card">
+                <div class="w-full font-literata text-xl flex gap-2 items-center">
+                    <img src='/files/icons/languages.svg' class="h-5 mt-1"/>
+                    Languages
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <p class="floating-text">Python</p>
+                    <p class="floating-text">Java</p>
+                    <p class="floating-text">C</p>
+                    <p class="floating-text">SQL</p>
+                    <p class="floating-text">.NET</p>
+                    <p class="floating-text">Visual Basic</p>
+                    <p class="floating-text">JavaScript</p>
+                    <p class="floating-text">TypeScript</p>
+                    <p class="floating-text">HTML/CSS</p>
+                    <p class="floating-text">R</p>
+                </div>
+            </div>
+            <div class="card">
+                <p class="w-full font-literata text-xl flex gap-2 items-center">
+                    <img src='/files/icons/frameworks.svg' class="h-5 mt-1"/>
+                    Frameworks
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <p class="floating-text">React</p>
+                    <p class="floating-text">Next.js</p>
+                    <p class="floating-text">Tailwind</p>
+                    <p class="floating-text">Django</p>
+                    <p class="floating-text">Spring boot</p>
+                    <p class="floating-text">Cypress</p>
+                    <p class="floating-text">JUnit</p>
+                    <p class="floating-text">Mockito</p>
+                    <p class="floating-text">PyTest</p>
+                </div>
+            </div>
+            <div class="card">
+                <p class="w-full font-literata text-xl flex items-center">
+                    <img src='/files/icons/tools.svg' class="h-6 mt-1"/>
+                    Tools
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <p class="floating-text">Docker</p>
+                    <p class="floating-text">CloudFlare</p>
+                    <p class="floating-text">Git</p>
+                    <p class="floating-text">Github Actions</p>
+                    <p class="floating-text">Vercel</p>
+                    <p class="floating-text">Agentic AI</p>
+                    <p class="floating-text">VSCode</p>
+                    <p class="floating-text">Linux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="h-max md:mx-20 flex justify-center items-center">
+        <div class="w-[90%] md:h-screen m-10 flex flex-col gap-10 ">
+
+            <div class="text-center md:text-left">
+                <h2 class="text-4xl md:text-5xl font-literata mb-6">Featured Projects</h2>
+                <p class="text-secondary font-semibold">A selection of my recent technical builds.</p>
+            </div>
+           
+            <div class="w-full flex flex-col md:grid md:grid-cols-3 md:grid-rows-2 gap-10 md:h-full">
+                <!-- Nestuity -->
+                <div class="group relative col-span-2 bg-[url('/files/images/nestuity.png')] bg-start project-card md:hover:scale-105 hover:shadow-xl transition-all duration-180" >
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300 rounded-3xl"></div>
+                    <div class="relative h-full flex flex-col justify-end transition-all duration-300 p-0 gap-5 md:gap-0">
+                        <!-- TEXT -->
+                        <div class="text-white transition-all duration-400 translate-y-0 md:group-hover:-translate-y-[60px] flex flex-col justify-end gap-2">
+                            <p class="px-3 py-1.5 rounded-full bg-secondary w-max text-xs font-bold shadow-lg">WEB DEVELOPMENT</p>
+                            <h3 class="font-literata text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] w-max">Nestuity</h3>
+                            <p class="bg-black/5">
+                                A web application aimed at reducing the mental load for new parents by simplifying cost planning and usage tracking for essential items
+                            </p>
+                            <div class="flex gap-3 text-xs">
+                                <p class="white-pill">Next.js</p>
+                                <p class="white-pill">Spring boot</p>
+                                <p class="white-pill">PostgreSQL</p>
+                            </div>
+                        </div>
+                        <!-- BUTTONS -->
+                        <div class="flex md:hidden gap-3">
+                            <a href="http://[2605:fd00:4:1001:f816:3eff:fee0:cbe1]/" target="_blank" class="btn-primary bg-secondary px-5 border border-neutral/30">
+                                See Project
+                            </a>
+                        </div>
+                    </div>
+
+                     <!-- BUTTONS -->
+                    <div class="hidden md:flex absolute bottom-5 gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="http://[2605:fd00:4:1001:f816:3eff:fee0:cbe1]/" target="_blank" class="btn-primary bg-secondary">
+                            See Project
+                        </a>
+                    </div>
+                   
+                </div>  
+
+                <!-- JasChat -->
+                <div class="group relative bg-[url('/files/images/jaschat.png')] bg-start project-card md:hover:scale-105 hover:shadow-xl transition-all duration-180" >
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300 rounded-3xl"></div>
+                    <div class="relative h-full flex flex-col justify-end transition-all duration-300 p-0 gap-5 md:gap-0">
+                        <!-- TEXT -->
+                        <div class="text-white transition-all duration-400 translate-y-0 md:group-hover:-translate-y-[50px] flex flex-col justify-end gap-2">
+                            <p class="px-3 py-1.5 rounded-full bg-secondary w-max text-xs font-bold shadow-lg">WEB DEVELOPMENT</p>
+                            <h3 class="font-literata text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] w-max">JasChat</h3>
+                            <p class="bg-black/5">
+                                A real-time chat application with encrypted messaging and a custom message reaction feature
+                            </p>
+                            <div class="flex flex-wrap gap-3 text-xs">
+                                <p class="white-pill">Next.js</p>
+                                <p class="white-pill">Websockets</p>
+                                <p class="white-pill">Supabase</p>
+                                <p class="white-pill">Vercel</p>
+                            </div>
+                        </div>
+                        <!-- BUTTONS -->
+                        <div class="flex md:hidden gap-3">
+                            <a href="https://jaschat.vercel.app/" target="_blank" class="btn-primary bg-secondary px-5 border border-neutral/30">
+                                See Project
+                            </a>
+                            <a href="https://github.com/echiewe/messaging-app/" target="_blank" class="btn-secondary px-5">
+                                See Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                     <!-- BUTTONS -->
+                    <div class="hidden md:flex flex-wrap absolute bottom-5 gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="https://jaschat.vercel.app/" target="_blank" class="btn-primary bg-secondary px-5 border border-neutral/30">
+                            See Project
+                        </a>
+                        <a href="https://github.com/echiewe/messaging-app/" target="_blank" class="btn-secondary px-5">
+                            See Source Code
+                        </a>
+                    </div>
+                   
+                </div>  
+
+                <!-- Social Network -->
+                <div class="group relative bg-[url('/files/images/social.png')] bg-start project-card md:hover:scale-105 hover:shadow-xl transition-all duration-180" >
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300 rounded-3xl"></div>
+                    <div class="relative h-full flex flex-col justify-end transition-all duration-300 p-0 gap-5 md:gap-0">
+                        <!-- TEXT -->
+                        <div class="text-white transition-all duration-400 translate-y-0 md:group-hover:-translate-y-[50px] flex flex-col justify-end gap-2">
+                            <p class="px-3 py-1.5 rounded-full bg-secondary w-max text-xs font-bold shadow-lg">WEB DEVELOPMENT</p>
+                            <h3 class="font-literata text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] w-max">Social Network</h3>
+                            <p class="bg-black/5">
+                                A social media web application where users can post, like, comment, and follow other users
+                            </p>
+                            <div class="flex flex-wrap gap-3 text-xs">
+                                <p class="white-pill">Django</p>
+                                <p class="white-pill">HTML/CSS</p>
+                                <p class="white-pill">JavaScript</p>  
+                            </div>
+                        </div>
+                        <!-- BUTTONS -->
+                        <div class="flex md:hidden gap-3">
+                            <a href="https://youtu.be/Bb3EK1mlJqY?si=V7GUTssc1RtJnwII" target="_blank" class="btn-primary bg-secondary px-5 border border-neutral/30">
+                                See Project
+                            </a>
+                            <a href="https://github.com/echiewe/social-distribution-network" target="_blank" class="btn-secondary px-5">
+                                See Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                     <!-- BUTTONS -->
+                    <div class="hidden md:flex flex-wrap absolute bottom-5 gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="https://youtu.be/Bb3EK1mlJqY?si=V7GUTssc1RtJnwII" target="_blank" class="btn-primary bg-secondary px-5">
+                            See Project
+                        </a>
+                        <a href="https://github.com/echiewe/social-distribution-network" target="_blank" class="btn-secondary px-5">
+                            See Source Code
+                        </a>
+                    </div>
+                   
+                </div> 
+
+                <!-- Workout4U -->
+                <div class="group relative col-span-2 bg-[url('/files/images/workout.png')] bg-start project-card md:hover:scale-105 hover:shadow-xl transition-all duration-180" >
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300 rounded-3xl"></div>
+                    <div class="relative h-full flex flex-col justify-end transition-all duration-300 p-0 gap-5 md:gap-0">
+                        <!-- TEXT -->
+                        <div class="text-white transition-all duration-400 translate-y-0 md:group-hover:-translate-y-[60px] flex flex-col justify-end gap-2">
+                            <p class="px-3 py-1.5 rounded-full bg-primary w-max text-xs font-bold shadow-lg">LLM INTEGRATION</p>
+                            <h3 class="font-literata text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)] w-max">Workout4U</h3>
+                            <p class="bg-black/5">
+                                Creates workouts based on users’ muscle group preferences to make working out easier and more accessible 
+                            </p>
+                            <div class="flex gap-3 text-xs">
+                                <p class="white-pill">Next.js</p>
+                                <p class="white-pill">AgentFlow</p>
+                                <p class="white-pill">TypeScript</p>
+                            </div>
+                        </div>
+                        <!-- BUTTONS -->
+                        <div class="flex md:hidden gap-3">
+                            <a href="https://echiewe.github.io/workout4u/" target="_blank" class="btn-primary bg-secondary px-5 border border-neutral/30">
+                                See Project
+                            </a>
+                            <a href="https://github.com/echiewe/workout4u" target="_blank" class="btn-secondary px-5">
+                                See Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                     <!-- BUTTONS -->
+                    <div class="hidden md:flex absolute bottom-5 gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        <a href="https://echiewe.github.io/workout4u/" target="_blank" class="btn-primary bg-primary">
+                            See Project
+                        </a>
+                        <a href="https://github.com/echiewe/workout4u" target="_blank" class="btn-secondary">
+                            See Source Code
+                        </a>
+                    </div>
+                   
+                </div>  
+                
             </div>
 
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="md:mx-[5vw] h-max md:h-max">
+        <div class="px-5 py-10 md:p-[5vw] bg-darkneutral w-full h-full flex flex-col items-center gap-10 rounded-2xl">
             <div>
-                <p class="wave" id="wave-text"></p>
-                <p class="wave" id="wave-shadow"></p>
+                <h2 class="text-center font-literata text-4xl md:text-5xl mb-6">Professional Journey</h2>
+                <p class="text-center text-secondary font-semibold">Combining academic rigour and hands-on industry contributions.</p>
+            </div>
+            <!-- WEB VIEW -->
+            <div class="hidden lg:block relative w-[70%] h-full">
+                <div class="absolute left-1/2 w-[1px] h-full bg-secondary ml-2.5"></div>
+                <div class="flex flex-col w-full h-full gap-10">
+                    <div class="flex justify-between items-center relative">
+                        <div class="card self-start">
+                            <div>
+                                <h3 class="font-literata text-primary text-xl">Software Engineer</h3>
+                                <h4 class="text-secondary">Nestuity</h4>
+                            </div>
+                            <ul class="text-sm list-disc pr-3 pl-4">
+                                <li>
+                                    designed and implemented a responsive, accessible user interface 
+                                </li>
+                                <li>
+                                    wrote end-to-end Cypress tests for all user flows
+                                </li>
+                                <li>
+                                    built and integrated RESTful APIs
+                                </li>
+                                <li>
+                                    containerized and deployed the full application using Docker and Cybera
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 z-30 w-5 h-5 rounded-full bg-secondary"></div>
+                        <p class="md:mr-40 text-primary font-bold ">Sept 2025 - Present</p>
+                    </div>
+
+                    <div class="flex justify-between items-center relative">
+                        <p class="md:ml-40 text-primary font-bold ">May 2024 - May 2025</p>
+                        <div class="absolute top-1/2 left-1/2 z-30 w-5 h-5 rounded-full bg-secondary"></div>
+                        <div class="card self-end">
+                            <div>
+                                <h3 class="font-literata text-primary text-xl">Implementation Consultant</h3>
+                                <h4 class="text-secondary">Fast Enterprises</h4>
+                            </div>
+                            <ul class="text-sm list-disc pr-3 pl-4">
+                                <li>
+                                    implemented changes and fixes on a legacy internal platform
+                                </li>
+                                <li>
+                                    coordinated testing and migrations across multiple environments and with various government departments
+                                </li>
+                                <li>
+                                    developed XML schemas and mapped information across platforms for tax returns to streamline processing
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center relative">
+                        <div class="card self-start">
+                            <div>
+                                <h3 class="font-literata text-primary text-xl">AI Research Assistant</h3>
+                                <h4 class="text-secondary">University of Alberta</h4>
+                            </div>
+                            <ul class="text-sm list-disc pr-3 pl-4">
+                                <li>
+                                    simulated a living environment for simple AI agents 
+                                </li>
+                                <li>
+                                    got simple AI agents to communicate their decision-making in human-readable form
+                                </li>
+                                <li>
+                                    implemented graph algorithms to infer optimal brain structures from large-scale agent performance data
+                                </li>
+                                <li>
+                                    explored biological implications of evolution as seen in simulations
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 z-30 w-5 h-5 rounded-full bg-secondary"></div>
+                        <p class="md:mr-40 text-primary font-bold ">Jan 2024 - May 2024</p>
+                    </div>
+
+                </div>
+                
             </div>
 
+            <!-- MOBILE VIEW -->
+            <div class="lg:hidden flex flex-col items-center gap-5 w-full h-max">
+                <div class="card">
+                    <div>
+                        <h3 class="font-literata text-primary text-xl">Software Engineer</h3>
+                        <h4 class="text-secondary">Nestuity</h4>
+                        <h4 class="text-secondary">Sept 2025 - Present</h4>
+                    </div>
+                    <ul class="text-sm list-disc pr-3 pl-4">
+                        <li>
+                            designed and implemented a responsive, accessible user interface 
+                        </li>
+                        <li>
+                            wrote end-to-end Cypress tests for all user flows
+                        </li>
+                        <li>
+                            built and integrated RESTful APIs
+                        </li>
+                        <li>
+                            containerized and deployed the full application using Docker and Cybera
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3 class="font-literata text-primary text-xl">Implementation Consultant</h3>
+                        <h4 class="text-secondary">Fast Enterprises</h4>
+                        <h4 class="text-secondary">May 2024 - May 2025</h4>
+                    </div>
+                    <ul class="text-sm list-disc pr-3 pl-4">
+                        <li>
+                            implemented changes and fixes on a legacy internal platform
+                        </li>
+                        <li>
+                            coordinated testing and migrations across multiple environments and with various government departments
+                        </li>
+                        <li>
+                            developed XML schemas and mapped information across platforms for tax returns to streamline processing
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3 class="font-literata text-primary text-xl">AI Research Assistant</h3>
+                        <h4 class="text-secondary">University of Alberta</h4>
+                        <h4 class="text-secondary">Jan 2024 - May 2024</h4>
+                    </div>
+                    <ul class="text-sm list-disc pr-3 pl-4">
+                        <li>
+                            simulated a living environment for simple AI agents 
+                        </li>
+                        <li>
+                            got simple AI agents to communicate their decision-making in human-readable form
+                        </li>
+                        <li>
+                            implemented graph algorithms to infer optimal brain structures from large-scale agent performance data
+                        </li>
+                        <li>
+                            explored biological implications of evolution as seen in simulations
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- INTRO -->
-    <section id="intro">
-        <h1 id="mobile">Hey! It's Evelyn :)</h1>
-        <img id="me-img" src="files/images/silly.jpg">
-        <div id="intro-para">
-            <div>
-                <h1 id="web">Hey! It's Evelyn :)</h1>
-                <h2 id="intro-section">About Me</h2>
-                <nav id="intro-menu">
-                    <p class="menu-item" id="about-me-nav">About Me</p>
-                    <p class="menu-item" id="work-exp-nav">Work Experience</p>
-                    <p class="menu-item" id="skills-nav">Skills</p>
-                </nav>
-            </div>
-            <div id="about-me">
-                <p>
-                    I'm currently a 5th year computing science student and teaching assistant at the UofA, specializing in software practice. 
-                </p>
-                <p>
-                    I have a particular interest in web development and architecture! My favourite projects can be found below. 
-                </p>
-                <p>
-                    I've also done some work with AI and machine learning, as well as database management and operating systems.
-                </p>
-                <p>In my free time, I like to read, travel, hang out with my sisters and my bird, and work out. </p>
-            </div>
-            <div id="work-exp">
-                <div>
-                    <p><b>Software Engineer @ Nestuity | Sept 2025 - Present</b></p>
-                    <p>Dashboard, Usage Calculator</p>
+    <!-- Contact -->
+    <section id="contact" class="flex justify-center items-center mt-10 px-4">
+        <div class="bg-[url('/files/images/background.png')] bg-cover bg-center w-full md:w-[60%] py-8 md:py-10 px-5 md:px-20 rounded-3xl text-center flex flex-col gap-4">
+            <p class="text-3xl md:text-4xl font-literata text-white">Ready to collaborate on your next big innovation?</p>
+            <p class="font-bold text-white">I'm currently seeking new grad opportunities for 2026.<br/>Let's connect and discuss how I can contribute to your team.</p>
+            <div class="flex flex-col md:flex-row gap-3 justify-center">
+                <a href="mailto:e.chiew@outlook.com" class="btn-primary">Email Me</a>
+                <div class="flex gap-3 justify-center">
+                    <a href="https://www.linkedin.com/in/evelyn-chiew-072bb2279/" target="_blank" class="btn-secondary"><img src='/files/icons/linkedin.svg' class="h-5"/></a>
+                    <a href="https://github.com/echiewe" target="_blank" class="btn-secondary"><img src='/files/icons/github.svg' class="h-6"/></a>
                 </div>
-                <div>
-                    <p><b>Teaching Assistant @ UofA | Jan 2024 - Present</b></p>
-                    <p>Discrete Mathematics, Ethics of Computers, Human Computer Interaction</p>
-                </div>
-                <div>
-                    <p><b>Implementation Consultant Intern @ Fast Enterprises | May 2024 - May 2025</b></p>
-                    <p>OntTax (Tax Returns, Collections, Audits)</p>
-                </div>
-                <div>
-                    <p><b>Research Assistant @ UofA (Dr. Vadim Bulitko) | Feb 2024 - May 2024</b></p>
-                    <p>Artificial life (alife)</p>
-                </div>
-            </div>
-            <div id="skills">
-                <p><b>Languages:</b><br>Python, Java, C, SQL, .NET, VB.NET, XML, JavaScript, TypeScript, HTML/CSS, MATLAB, R</p>
-                <p><b>Frameworks:</b><br>React, Next.js, Tailwind CSS, Spring boot, JUnit, Django, AgentFlow</p>
-                <p><b>Developer Tools:</b><br>Docker, Agentic AI, Git, GitHub Actions (CI/CD), VSCode, SQL Server Management Studio, Linux, Android Studio</p>
+                <a href="files/EvelynChiewResume.pdf" target="_blank" class="btn-tertiary">Download Resume</a>
             </div>
         </div>
     </section>
-    
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h1>My work!</h1>
-        <div id="proj-parent">
 
-            <a href="http://[2605:fd00:4:1001:f816:3eff:fee0:cbe1]/" target="_blank" title="Click Me!" class="proj-container">
-                <!-- https://drive.google.com/file/d/1ZOsl6Yhnnuxa3ms7xQnVdLlBxHxXZr2N/view?usp=drive_link -->
-                <div class="subsection">
-                    <h2>Nestuity</h2>
-                    <p>
-                        Nestuity supports parents of newborns by simplifying the management of daily essentials. 
-                        The app eases financial strain and offers peace of mind 
-                        through smart pricing insights, cost tracking for essential items, a usage calculator to forecast diaper needs, 
-                        and intelligent reminders for supplies and key milestones.
-                    </p>
-                </div>
-                <img src="files/images/oh.jpg">
-            </a>
-
-            <a href="https://echiewe.github.io/workout4u/" target="_blank" title="Click Me!" class="proj-container">
-                <div class="subsection">
-                    <h2>Workout4U</h2>
-                    <p>A cute, user-friendly workout generator that creates customized workouts based on muscle group preferences input by users.</p>
-                </div>
-                <img src="files/images/oh.jpg">
-            </a>
-
-            <a href="https://youtu.be/Bb3EK1mlJqY?si=V7GUTssc1RtJnwII" target="_blank" title="Click Me!" class="proj-container">
-                <div class="subsection">
-                    <h2>Social Distribution Network</h2>
-                    <p>
-                        A social media web application where users can post, like, comment, and follow other users. 
-                        Also includes the integration of other social network applications to enable app-to-app communication.
-                    </p>
-                </div>
-                <img src="files/images/oh.jpg">
-            </a>
-
-            <a href="https://docs.google.com/document/d/1sQKBtQkdDRKEoZCEex6Ign0xWrpJKHZg4_McwoGk40k/edit?tab=t.0#heading=h.nfktddgx9fzo" target="_blank" title="Click Me!" class="proj-container">
-                <div class="subsection">
-                    <h2>Grocery Store Profitability</h2>
-                    <p>
-                        A machine-learning project that improved the profitability of a grocery store by 
-                        predicting which customer groups and promotions generated the most value. By analyzing 
-                        real-world purchasing data and presenting clear, visual insights, the work supported 
-                        smarter pricing and promotional decisions.
-                    </p>
-                </div>
-                <img src="files/images/oh.jpg">
-            </a>
-
+    <footer class="flex flex-col items-center py-3 gap-2 border-t border-tertiary mt-10 px-4">
+        <h3 class="font-literata text-primary text-xl">Evelyn</h3>
+        <div class="flex gap-5 text-secondary">
+            <a href="https://github.com/echiewe" target="_blank" class="hover:text-primary">GitHub</a>
+            <a href="https://www.linkedin.com/in/evelyn-chiew-072bb2279/" target="_blank" class="hover:text-primary">LinkedIn</a>
+            <a href="https://github.com/echiewe/portfolio" target="_blank" class="hover:text-primary">Source Code</a>
         </div>
-    </section>
+        <p class="text-secondary/60 text-center">© 2026 Evelyn Chiew — Designed & built with HTML, CSS, and JS</p>
+        <p class="text-secondary/60 text-center">Thanks for visiting! See you around :)</p>
+    </footer>
 
 </body>
-<footer>
-    <p>© 2025 Evelyn Chiew — Designed & built with HTML, CSS, and JS</p>
-    <p id="thanks">Thanks for visiting! See you around :)</p>
-</footer>
 </html>
